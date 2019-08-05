@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor="let student of students">
+        {{student.name}} - 
+        {{student.age}} - 
+        <button (click)="getStudentData(student._id)">See</button>
+        <button (click)="deleteStudent(student._id)">Delete</button>
+    </li>
+</ul>

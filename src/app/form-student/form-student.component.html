@@ -1,0 +1,26 @@
+<!-- <form [formGroup]="miFormulario" (ngSubmit)="guardarCambios()" novalidate="">
+    
+    <input class="form-control" type="text" 
+                placeholder="Name" formControlName="name">
+    
+    <input class="form-control" type="text" 
+                placeholder="Age" formControlName="age">
+    
+    <button type="submit">Post</button>
+
+</form> -->
+
+<form [formGroup]="miFormulario" (ngSubmit)="guardarCambios()" novalidate="">
+    
+    <input class="form-control" type="text" placeholder="Name" formControlName="name"
+            [ngClass]="{'is-invalid': !miFormulario.get('name').valid}">
+        <div *ngIf="miFormulario.controls['name'].errors?.required" class="invalid-feedback">
+            El nombre es necesario
+        </div>
+    
+    <!-- <input class="form-control" type="number" placeholder="Age" 
+                formControlName="age"> -->
+    
+    <button type="submit">Post</button>
+
+</form>
